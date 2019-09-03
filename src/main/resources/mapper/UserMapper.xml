@@ -3,8 +3,45 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ev.loudishi.dao.UserMapper">
 
+    <!--增-->
+    <insert id="insertUser">
+        insert into user(username, password)
+        values (#{username}, #{password})
+    </insert>
 
+
+    <!--删-->
+    <!--需注意，username字段进行删除的时候，需要在外层添加""才不会报错-->
+    <delete id="deleteUserById">
+        delete
+        from user
+        where id = ${id}
+    </delete>
+    <delete id="deleteUserByName" parameterType="java.lang.String">
+        delete
+        from user
+        where username = "${username}"
+    </delete>
+
+
+    <update id="updataPwdByName">
+        update user
+        set password = #{password}
+        where username = #{username}
+    </update>
+    <update id="updateUserById">
+        update user
+        set
+        username = "${username}",
+        password = "${password}"
+        where id = ${id}
+    </update>
+
+
+    <!--查-->
     <select id="getUser" resultType="com.ev.loudishi.entity.User" parameterType="long">
-        select * from user where id = ${id}
+        select *
+        from user
+        where id = ${id}
     </select>
 </mapper>
