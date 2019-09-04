@@ -44,6 +44,14 @@
             <optional>true</optional>
         </dependency>
 
+        <!--json字符串、json对象和javabean之间相互转换-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.58</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

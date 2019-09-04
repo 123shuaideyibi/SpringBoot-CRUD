@@ -3,8 +3,6 @@ package com.ev.loudishi.dao;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -29,14 +27,15 @@ public class UserMapperTests {
     /*==============================增====================================*/
 
     /**
-     * 插入数据
+     * 插入数据username和password
      */
     @Test
     public void insertUser() {
-        String username = "wangwu";
-        String password = "342";
+        String username = "赵云";
+        String password = "888";
         System.out.println(userMapper.insertUser(username, password));
     }
+
     /*===============================删===================================*/
 
     /**
@@ -63,32 +62,40 @@ public class UserMapperTests {
      * 通过username修改password
      */
     @Test
-    public void updataPwdByname(){
+    public void updataPwdByname() {
         String username = "lisi";
         String password = "987";
-        System.out.println(userMapper.updataPwdByName(username,password));
+        System.out.println(userMapper.updataPwdByName(username, password));
     }
 
     /**
      * 通过id修改User
      */
     @Test
-    public void updataUserById(){
+    public void updataUserById() {
         int id = 2;
         String username = "zhaosi";
         String password = "365";
-        System.out.println(userMapper.updateUserById(id,username,password));
+        System.out.println(userMapper.updateUserById(id, username, password));
     }
 
     /*=================================查================================*/
+
     /**
      * 通过id查询
      */
     @Test
     public void selectUserById() {
         int id = 1;
-        System.out.println(userMapper.getUser((id)));
+        System.out.println(userMapper.getUser((id)));//[User{id=1, username='zhangsan', password='123'}]
     }
 
+    /**
+     * 通过username查询password
+     */
+    @Test
+    public void selectPwdByName() {
+        System.out.println("通过username获取到的password为：" + userMapper.selectPwdByName("zhangsan"));
+    }
 
 }

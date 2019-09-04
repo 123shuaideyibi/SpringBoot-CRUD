@@ -9,7 +9,6 @@
         values (#{username}, #{password})
     </insert>
 
-
     <!--删-->
     <!--需注意，username字段进行删除的时候，需要在外层添加""才不会报错-->
     <delete id="deleteUserById">
@@ -23,7 +22,7 @@
         where username = "${username}"
     </delete>
 
-
+    <!--改-->
     <update id="updataPwdByName">
         update user
         set password = #{password}
@@ -32,8 +31,8 @@
     <update id="updateUserById">
         update user
         set
-        username = "${username}",
-        password = "${password}"
+            username = "${username}",
+            password = "${password}"
         where id = ${id}
     </update>
 
@@ -44,4 +43,17 @@
         from user
         where id = ${id}
     </select>
+    <select id="selectPwdByName" resultType="java.lang.String">
+        select password
+        from user
+        where username = "${username}"
+    </select>
+    <!--=================================================================-->
+    <!--判断用户名是否存在-->
+    <select id="getPwd" resultType="java.lang.String">
+        select password
+        from user
+        where username = "${username}"
+    </select>
+
 </mapper>
