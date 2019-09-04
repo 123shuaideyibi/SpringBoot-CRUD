@@ -11,5 +11,4 @@ public class LoudishiApplication {
     public static void main(String[] args) {
         SpringApplication.run(LoudishiApplication.class, args);
     }
-
 }

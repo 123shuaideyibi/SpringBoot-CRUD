@@ -9,10 +9,23 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
-    /*=====================================ssm实现流程======================================================*/
+
+
+
+
+
+    /*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓service测试↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+
     //通过用户名查询密码
     String getPwd(@Param("username") String username);
-    /*==================================测试类用于实现============================================*/
+
+    /*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑service测试↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
+
+
+
+
+
+    /*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓dao测试↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
     //    增
     boolean insertUser(@Param("username") String username, @Param("password") String password);
 
@@ -34,4 +47,5 @@ public interface UserMapper {
     List<User> getUser(int id);
 
     String selectPwdByName(String username);
+    /*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑dao增删改查测试↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
 }

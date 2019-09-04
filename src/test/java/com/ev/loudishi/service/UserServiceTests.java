@@ -15,12 +15,12 @@ public class UserServiceTests {
     private UserService userService;
 
     /**
-     * 判断用户名是否存在
+     * 测试用户名和密码是否正确
      */
     @Test
-    public void checkLogin() {
+    public void checkService() {
         String username = "zhangsan";
         String password = "123";
-        System.out.println(userService.checkLogin(username, password));
+        System.out.println("登录状态:"+userService.checkService(username, password));
     }
 }
