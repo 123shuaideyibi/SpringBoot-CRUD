@@ -13,33 +13,38 @@ public interface UserMapper {
     /*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓实战↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
     //通过用户名查询密码
     String queryPassword(@Param("username") String username);
+
+    //判断用户名是否存在
+    User isExist(String username);
+    //用户名不存在，可以插入数据
+    boolean insertUser(String username, String password);
     /*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑实战↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
 
 
 
-
     /*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓dao测试↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
+
     //    增
 
-    boolean insertUser(@Param("username") String username, @Param("password") String password);
+    boolean insert(@Param("username") String username, @Param("password") String password);
 
 
     //    删
 
-    boolean deleteUserById(int id);
+    boolean delete(int id);
 
-    boolean deleteUserByName(String username);
+    boolean delete2(String username);
 
     //    改
 
-    boolean updataPwdByName(@Param("username") String username, @Param("password") String password);
+    boolean update(@Param("username") String username, @Param("password") String password);
 
-    boolean updateUserById(@Param("id") int id, @Param("username") String username, @Param("password") String password);
+    boolean update2(@Param("id") int id, @Param("username") String username, @Param("password") String password);
 
     //    查
 
-    List<User> getUser(int id);
+    List<User> select(int id);
 
-    String selectPwdByName(String username);
+    String select2(String username);
     /*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑dao增删改查测试↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
 }

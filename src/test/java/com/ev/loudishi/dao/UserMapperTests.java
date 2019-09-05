@@ -24,19 +24,16 @@ public class UserMapperTests {
     @Resource
     private UserMapper userMapper;
 
-
-
-
     /*==============================增====================================*/
 
     /**
      * 插入数据username和password
      */
     @Test
-    public void insertUser() {
-        String username = "赵云";
+    public void insert() {
+        String username = "zhaoyun";
         String password = "888";
-        System.out.println(userMapper.insertUser(username, password));
+        System.out.println(userMapper.insert(username, password));
     }
 
     /*===============================删===================================*/
@@ -45,18 +42,18 @@ public class UserMapperTests {
      * 通过id删除
      */
     @Test
-    public void deleteUserById() {
-        int id = 4;
-        System.out.println(userMapper.deleteUserById(id));
+    public void delete() {
+        int id = 10;
+        System.out.println(userMapper.delete(id));
     }
 
     /**
      * 通过username删除
      */
     @Test
-    public void deleteUserByName() {
-        String username = "wangwu";
-        System.out.println(userMapper.deleteUserByName(username));
+    public void delete2() {
+        String username = "赵云";
+        System.out.println(userMapper.delete2(username));
     }
 
     /*=================================改================================*/
@@ -65,21 +62,21 @@ public class UserMapperTests {
      * 通过username修改password
      */
     @Test
-    public void updataPwdByname() {
-        String username = "lisi";
+    public void update() {
+        String username = "zhaoyun";
         String password = "987";
-        System.out.println(userMapper.updataPwdByName(username, password));
+        System.out.println(userMapper.update(username, password));
     }
 
     /**
      * 通过id修改User
      */
     @Test
-    public void updataUserById() {
+    public void updata2() {
         int id = 2;
         String username = "zhaosi";
-        String password = "000";
-        System.out.println(userMapper.updateUserById(id, username, password));
+        String password = "111";
+        System.out.println(userMapper.update2(id, username, password));
     }
 
     /*=================================查================================*/
@@ -88,17 +85,17 @@ public class UserMapperTests {
      * 通过id查询
      */
     @Test
-    public void selectUserById() {
+    public void select() {
         int id = 1;
-        System.out.println(userMapper.getUser((id)));//[User{id=1, username='zhangsan', password='123'}]
+        System.out.println(userMapper.select((id)));//[User{id=1, username='zhangsan', password='123'}]
     }
 
     /**
      * 通过username查询password
      */
     @Test
-    public void selectPwdByName() {
-        System.out.println("通过username获取到的password为：" + userMapper.selectPwdByName("zhangsan"));
+    public void select2() {
+        System.out.println("通过username获取到的password为：" + userMapper.select2("zhangsan"));
     }
 
 }

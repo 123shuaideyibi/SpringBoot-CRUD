@@ -17,11 +17,15 @@ public class UserServiceTests {
     /**
      * 测试用户名和密码是否正确
      */
-    @Test
-    public void checkLogin() {
-        String username = "zhangsan";
-        String password = "123";
-        System.out.println("登录状态:"+userService.checkLogin(username,password));
-    }
+//    @Test
+//    public void checkLogin() {
+//        String username = "zhangsan";
+//        String password = "123";
+//        System.out.println("登录状态:"+userService.checkLogin(username,password));
+//    }
 
+    @Test
+    public void insertUser(){
+        System.out.println(userService.checkRegister("aaa","123"));
+    }
 }

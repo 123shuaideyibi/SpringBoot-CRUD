@@ -3,6 +3,7 @@ package com.ev.loudishi.controller;
 import com.ev.loudishi.entity.User;
 import com.ev.loudishi.service.UserService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -26,9 +27,9 @@ public class UserController {
      */
     @RequestMapping("/login")
     public String login(User user, ModelMap map) {
-        System.out.println("用户名：" + user.getUsername() + " " + "密码：" + user.getPassword());
-        if (user.getUsername() != null||user.getPassword()!=null) {
-            boolean loginStatus = userService.checkLogin(user.getUsername(),user.getPassword());
+//        System.out.println("用户名：" + user.getUsername() + " " + "密码：" + user.getPassword());
+        if (user.getUsername() != null || user.getPassword() != null) {
+            boolean loginStatus = userService.checkLogin(user.getUsername(), user.getPassword());
             map.addAttribute("loginStatus", loginStatus);
         }
         return "login";
@@ -41,8 +42,12 @@ public class UserController {
      * @return
      */
     @RequestMapping("/register")
-    public String register(User user) {
-        System.out.println(user);
+    public String register(User user, Model model) {
+//        System.out.println(user.getUsername()+user.getPassword());
+        if (user.getUsername() != null || user.getPassword() != null) {
+            boolean registerStatus = userService.checkRegister(user.getUsername(),user.getPassword());
+            model.addAttribute("registerStatus",registerStatus);
+        }
         return "register";
     }
 
