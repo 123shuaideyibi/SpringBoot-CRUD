@@ -24,6 +24,9 @@ public class UserMapperTests {
     @Resource
     private UserMapper userMapper;
 
+
+
+
     /*==============================增====================================*/
 
     /**
@@ -75,7 +78,7 @@ public class UserMapperTests {
     public void updataUserById() {
         int id = 2;
         String username = "zhaosi";
-        String password = "365";
+        String password = "000";
         System.out.println(userMapper.updateUserById(id, username, password));
     }
 

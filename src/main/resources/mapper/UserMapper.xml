@@ -3,10 +3,18 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.ev.loudishi.dao.UserMapper">
 
+    <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓实战↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+    <select id="queryPassword" resultType="java.lang.String">
+        select password from user where username = "${username}"
+    </select>
+    <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑实战↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+
+
+
     <!--增-->
     <insert id="insertUser">
         insert into user(username, password)
-        values (#{username}, #{password})
+        values (${username}, ${password})
     </insert>
 
     <!--删-->
@@ -25,8 +33,8 @@
     <!--改-->
     <update id="updataPwdByName">
         update user
-        set password = #{password}
-        where username = #{username}
+        set password = ${password}
+        where username = ${username}
     </update>
     <update id="updateUserById">
         update user
@@ -44,13 +52,6 @@
         where id = ${id}
     </select>
     <select id="selectPwdByName" resultType="java.lang.String">
-        select password
-        from user
-        where username = "${username}"
-    </select>
-    <!--=================================================================-->
-    <!--判断用户名是否存在-->
-    <select id="getPwd" resultType="java.lang.String">
         select password
         from user
         where username = "${username}"

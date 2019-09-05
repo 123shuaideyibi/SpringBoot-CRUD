@@ -10,23 +10,17 @@ import java.util.List;
 public interface UserMapper {
 
 
-
-
-
-
-    /*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓service测试↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
-
+    /*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓实战↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
     //通过用户名查询密码
-    String getPwd(@Param("username") String username);
-
-    /*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑service测试↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
-
+    String queryPassword(@Param("username") String username);
+    /*↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑实战↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑*/
 
 
 
 
     /*↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓dao测试↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓*/
     //    增
+
     boolean insertUser(@Param("username") String username, @Param("password") String password);
 
 
@@ -38,9 +32,9 @@ public interface UserMapper {
 
     //    改
 
-    boolean updataPwdByName(@Param("username") String username,@Param("password") String password);
+    boolean updataPwdByName(@Param("username") String username, @Param("password") String password);
 
-    boolean updateUserById(@Param("id") int id,@Param("username") String username,@Param("password") String password);
+    boolean updateUserById(@Param("id") int id, @Param("username") String username, @Param("password") String password);
 
     //    查
 
